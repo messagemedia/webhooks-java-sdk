@@ -22,14 +22,14 @@ import com.messagemedia.webhooks.http.response.HttpStringResponse;
 import com.messagemedia.webhooks.http.client.APICallBack;
 import com.messagemedia.webhooks.controllers.syncwrapper.APICallBackCatcher;
 
-public class APIController extends BaseController {    
+public class APIController extends BaseController {
     //private static variables for the singleton pattern
     private static Object syncObject = new Object();
     private static APIController instance = null;
 
     /**
-     * Singleton pattern implementation 
-     * @return The singleton instance of the APIController class 
+     * Singleton pattern implementation
+     * @return The singleton instance of the APIController class
      */
     public static APIController getInstance() {
         synchronized (syncObject) {
@@ -84,9 +84,9 @@ public class APIController extends BaseController {
      *      <li>the `method` is null </li>
      *      <li>the `headers` has a `ContentType`  attribute </li>
      *     </ul>
-     * @param    contentType    Required parameter: Example: 
-     * @param    body    Required parameter: Example: 
-     * @return    Returns the DynamicResponse response from the API call 
+     * @param    contentType    Required parameter: Example:
+     * @param    body    Required parameter: Example:
+     * @return    Returns the DynamicResponse response from the API call
      */
     public DynamicResponse create(
                 final String contentType,
@@ -143,9 +143,9 @@ public class APIController extends BaseController {
      *      <li>the `method` is null </li>
      *      <li>the `headers` has a `ContentType`  attribute </li>
      *     </ul>
-     * @param    contentType    Required parameter: Example: 
-     * @param    body    Required parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    contentType    Required parameter: Example:
+     * @param    body    Required parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void createAsync(
                 final String contentType,
@@ -168,7 +168,7 @@ public class APIController extends BaseController {
                     private static final long serialVersionUID = 5307147615583971842L;
                     {
                         put( "Content-Type", contentType );
-                        put( "user-agent", "messagesmedia-webhooks" );
+                        put( "user-agent", "messagemedia-webhooks-java-sdk-1.0.0" );
                         put( "accept", "application/json" );
                     }
                 };
@@ -195,7 +195,7 @@ public class APIController extends BaseController {
                         try {
 
                             //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
+                            if (getHttpCallBack() != null)
                             {
                                 getHttpCallBack().OnAfterResponse(_context);
                             }
@@ -244,8 +244,8 @@ public class APIController extends BaseController {
      *     <ul>
      *      <li>there is no webhook  with this `webhookId` </li>
      *     </ul>
-     * @param    webhookId    Required parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    webhookId    Required parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void deleteDeleteAndUpdateWebhook(
                 final UUID webhookId
@@ -263,8 +263,8 @@ public class APIController extends BaseController {
      *     <ul>
      *      <li>there is no webhook  with this `webhookId` </li>
      *     </ul>
-     * @param    webhookId    Required parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    webhookId    Required parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void deleteDeleteAndUpdateWebhookAsync(
                 final UUID webhookId,
@@ -312,7 +312,7 @@ public class APIController extends BaseController {
                         try {
 
                             //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
+                            if (getHttpCallBack() != null)
                             {
                                 getHttpCallBack().OnAfterResponse(_context);
                             }
@@ -360,9 +360,9 @@ public class APIController extends BaseController {
      *      <li>the `page` query parameter is not valid </li>
      *      <li>the `pageSize` query parameter is not valid </li>
      *     </ul>
-     * @param    page    Optional parameter: Example: 
-     * @param    pageSize    Optional parameter: Example: 
-     * @return    Returns the RetrieveResponse response from the API call 
+     * @param    page    Optional parameter: Example:
+     * @param    pageSize    Optional parameter: Example:
+     * @return    Returns the RetrieveResponse response from the API call
      */
     public RetrieveResponse retrieve(
                 final Integer page,
@@ -382,9 +382,9 @@ public class APIController extends BaseController {
      *      <li>the `page` query parameter is not valid </li>
      *      <li>the `pageSize` query parameter is not valid </li>
      *     </ul>
-     * @param    page    Optional parameter: Example: 
-     * @param    pageSize    Optional parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    page    Optional parameter: Example:
+     * @param    pageSize    Optional parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void retrieveAsync(
                 final Integer page,
@@ -435,7 +435,7 @@ public class APIController extends BaseController {
                         try {
 
                             //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
+                            if (getHttpCallBack() != null)
                             {
                                 getHttpCallBack().OnAfterResponse(_context);
                             }
@@ -485,7 +485,7 @@ public class APIController extends BaseController {
     }
 
     /**
-     * This will update a webhook and returned the updated Webhook. 
+     * This will update a webhook and returned the updated Webhook.
      * you can update all the attributes individually or together.
      * PS : the new value will override the previous one.
      * ### Parameters
@@ -493,17 +493,17 @@ public class APIController extends BaseController {
      *  a **Response 404 is returned when** :
      *     <ul>
      *      <li>there is no webhook with this `webhookId` </li>
-     *     </ul>   
+     *     </ul>
      *  a **Response 400 is returned when** :
      *     <ul>
      *       <li>all attributes are null </li>
      *      <li>events array is empty </li>
      *      <li>content-Type is set in the headers instead of using the `encoding` attribute  </li>
      *     </ul>
-     * @param    webhookId    Required parameter: Example: 
-     * @param    contentType    Required parameter: Example: 
-     * @param    body    Required parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    webhookId    Required parameter: Example:
+     * @param    contentType    Required parameter: Example:
+     * @param    body    Required parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void update(
                 final UUID webhookId,
@@ -518,7 +518,7 @@ public class APIController extends BaseController {
     }
 
     /**
-     * This will update a webhook and returned the updated Webhook. 
+     * This will update a webhook and returned the updated Webhook.
      * you can update all the attributes individually or together.
      * PS : the new value will override the previous one.
      * ### Parameters
@@ -526,17 +526,17 @@ public class APIController extends BaseController {
      *  a **Response 404 is returned when** :
      *     <ul>
      *      <li>there is no webhook with this `webhookId` </li>
-     *     </ul>   
+     *     </ul>
      *  a **Response 400 is returned when** :
      *     <ul>
      *       <li>all attributes are null </li>
      *      <li>events array is empty </li>
      *      <li>content-Type is set in the headers instead of using the `encoding` attribute  </li>
      *     </ul>
-     * @param    webhookId    Required parameter: Example: 
-     * @param    contentType    Required parameter: Example: 
-     * @param    body    Required parameter: Example: 
-     * @return    Returns the void response from the API call 
+     * @param    webhookId    Required parameter: Example:
+     * @param    contentType    Required parameter: Example:
+     * @param    body    Required parameter: Example:
+     * @return    Returns the void response from the API call
      */
     public void updateAsync(
                 final UUID webhookId,
@@ -593,7 +593,7 @@ public class APIController extends BaseController {
                         try {
 
                             //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
+                            if (getHttpCallBack() != null)
                             {
                                 getHttpCallBack().OnAfterResponse(_context);
                             }
