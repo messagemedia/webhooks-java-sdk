@@ -94,8 +94,8 @@ a **Response 400 is returned when** :
     @Test
     public void testRetrieve1() throws Throwable {
         // Parameters for the API call
-        Integer page = '1';
-        Integer pageSize = '10';
+        Integer page = "1";
+        Integer pageSize = "10";
 
         // Set callback and perform API call
         RetrieveResponse result = null;
