@@ -4,7 +4,17 @@
 Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to "speak" to one another and get notified automatically when something new happens.
 
 ## ⭐️ Installing via Maven
+At present the jars are available from a public maven repository.
 
+Use the following dependency in your project to grab via Maven:
+```
+<dependency>
+    <groupId>com.messagemedia.sdk</groupId>
+    <artifactId>webhooks</artifactId>
+    <version>1.0.0</version>
+</dependency>
+
+```
 
 ## 🎬 Get Started
 It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below.
