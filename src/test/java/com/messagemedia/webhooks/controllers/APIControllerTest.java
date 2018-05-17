@@ -71,7 +71,7 @@ a **Response 404 is returned when** :
                 httpResponse.getResponse());
         // Test response code
         assertEquals("Status is not 204", 
-                204, httpResponse.getResponse().getStatusCode());
+                404, httpResponse.getResponse().getStatusCode());
 
         // Test headers
         Map<String, String> headers = new LinkedHashMap<String, String>();
@@ -109,7 +109,7 @@ a **Response 400 is returned when** :
                 httpResponse.getResponse());
         // Test response code
         assertEquals("Status is not 200", 
-                200, httpResponse.getResponse().getStatusCode());
+                404, httpResponse.getResponse().getStatusCode());
 
         // Test headers
         Map<String, String> headers = new LinkedHashMap<String, String>();
