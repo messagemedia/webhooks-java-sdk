@@ -42,7 +42,9 @@ public class ControllerTestBase {
      */
     @Before
     public void setUp() throws Exception {
-        httpResponse = new HttpCallBackCatcher(); 
+        httpResponse = new HttpCallBackCatcher();
+        Configuration.basicAuthUserName = System.getenv("MessageMediaApiTestsKey");
+        Configuration.basicAuthPassword = System.getenv("MessageMediaApiTestsSecret");
     }
 
     /**
