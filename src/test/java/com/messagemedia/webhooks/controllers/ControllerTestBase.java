@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.Timeout;
 
+import com.messagemedia.messages.Configuration;
 import com.messagemedia.webhooks.MessageMediaWebhooksClient;
 import com.messagemedia.webhooks.testing.HttpCallBackCatcher;
 
