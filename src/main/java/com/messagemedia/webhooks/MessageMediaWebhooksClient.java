@@ -10,11 +10,11 @@ import com.messagemedia.webhooks.http.client.HttpClient;
 
 public class MessageMediaWebhooksClient {
     /**
-     * Singleton access to Client controller
-     * @return	Returns the APIController instance 
+     * Singleton access to Webhooks controller
+     * @return	Returns the WebhooksController instance 
      */
-    public APIController getClient() {
-        return APIController.getInstance();
+    public WebhooksController getWebhooks() {
+        return WebhooksController.getInstance();
     }
 
     /**
