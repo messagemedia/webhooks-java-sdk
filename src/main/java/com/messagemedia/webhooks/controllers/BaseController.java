@@ -9,7 +9,7 @@ import com.messagemedia.webhooks.exceptions.*;
 import com.messagemedia.webhooks.http.client.HttpClient;
 import com.messagemedia.webhooks.http.client.HttpContext;
 import com.messagemedia.webhooks.http.client.HttpCallBack;
-import com.messagemedia.webhooks.http.client.UnirestClient;
+import com.messagemedia.webhooks.http.client.OkClient;
 import com.messagemedia.webhooks.http.response.HttpResponse;
 
 public abstract class BaseController {
@@ -47,7 +47,7 @@ public abstract class BaseController {
     public static HttpClient getClientInstance() {
         synchronized (syncObject) {
             if (null == clientInstance) {
-                clientInstance = UnirestClient.getSharedInstance();
+                clientInstance = OkClient.getSharedInstance();
     }
         }
         return clientInstance;
