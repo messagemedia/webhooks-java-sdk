@@ -196,7 +196,7 @@ public class WebhooksController extends BaseController {
                 Map<String, String> _headers = new HashMap<String, String>() {
                     private static final long serialVersionUID = 5600241497466020242L;
                     {
-                        put( "user-agent", "messagesmedia-webhooks" );
+                        put( "user-agent", "messagemedia-webhooks-java-sdk-1.0.0" );
                         put( "accept", "application/json" );
                         put( "content-type", "application/json" );
                     }
@@ -363,7 +363,7 @@ public class WebhooksController extends BaseController {
                 Map<String, String> _headers = new HashMap<String, String>() {
                     private static final long serialVersionUID = 5625182578924248129L;
                     {
-                        put( "user-agent", "messagesmedia-webhooks" );
+                        put( "user-agent", "messagemedia-webhooks-java-sdk-1.0.0" );
                         put( "accept", "application/json" );
                     }
                 };
@@ -435,7 +435,7 @@ public class WebhooksController extends BaseController {
      * @return    Returns the void response from the API call 
      */
     public void deleteWebhook(
-                final UUID webhookId
+                final String webhookId
     ) throws Throwable {
         APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
         deleteWebhookAsync(webhookId, callback);
@@ -452,7 +452,7 @@ public class WebhooksController extends BaseController {
      * @return    Returns the void response from the API call 
      */
     public void deleteWebhookAsync(
-                final UUID webhookId,
+                final String webhookId,
                 final APICallBack<Object> callBack
     ) {
         Runnable _responseTask = new Runnable() {
@@ -477,7 +477,7 @@ public class WebhooksController extends BaseController {
                 Map<String, String> _headers = new HashMap<String, String>() {
                     private static final long serialVersionUID = 5244496200788021303L;
                     {
-                        put( "user-agent", "messagesmedia-webhooks" );
+                        put( "user-agent", "messagemedia-webhooks-java-sdk-1.0.0" );
                     }
                 };
 
@@ -560,7 +560,7 @@ public class WebhooksController extends BaseController {
      * @return    Returns the DynamicResponse response from the API call 
      */
     public DynamicResponse updateWebhook(
-                final UUID webhookId,
+                final String webhookId,
                 final UpdateWebhookRequest body
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
@@ -592,7 +592,7 @@ public class WebhooksController extends BaseController {
      * @return    Returns the void response from the API call 
      */
     public void updateWebhookAsync(
-                final UUID webhookId,
+                final String webhookId,
                 final UpdateWebhookRequest body,
                 final APICallBack<DynamicResponse> callBack
     ) {
@@ -618,7 +618,7 @@ public class WebhooksController extends BaseController {
                 Map<String, String> _headers = new HashMap<String, String>() {
                     private static final long serialVersionUID = 4680496999208860836L;
                     {
-                        put( "user-agent", "messagesmedia-webhooks" );
+                        put( "user-agent", "messagemedia-webhooks-java-sdk-1.0.0" );
                         put( "accept", "application/json" );
                         put( "content-type", "application/json" );
                     }

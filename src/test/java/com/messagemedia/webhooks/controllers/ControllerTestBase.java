@@ -12,7 +12,7 @@ import org.junit.rules.Timeout;
 
 import com.messagemedia.webhooks.MessageMediaWebhooksClient;
 import com.messagemedia.webhooks.testing.HttpCallBackCatcher;
-
+import com.messagemedia.webhooks.Configuration;
 /**
  * Base class for all test cases
  */
@@ -42,7 +42,10 @@ public class ControllerTestBase {
      */
     @Before
     public void setUp() throws Exception {
-        httpResponse = new HttpCallBackCatcher(); 
+        httpResponse = new HttpCallBackCatcher();
+
+        Configuration.basicAuthUserName = System.getenv("MessageMediaApiTestsKey");
+        Configuration.basicAuthPassword = System.getenv("MessageMediaApiTestsSecret");
     }
 
     /**
